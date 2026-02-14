@@ -14,24 +14,14 @@ API_URL = 'https://api.apiverve.com/v1/planetpositions'
 
 def call_planetpositions_api():
     """
-    Make a POST request to the Planet Positions API
+    Make a GET request to the Planet Positions API
     """
     try:
-        # Request body
-        request_body &#x3D; {
-    &#x27;planet&#x27;: &#x27;Moon&#x27;,
-    &#x27;date&#x27;: &#x27;2025-04-15 10:37:00&#x27;,
-    &#x27;lat&#x27;: 37.7749,
-    &#x27;lon&#x27;: -122.4194,
-    &#x27;alt&#x27;: 52
-}
-
         headers = {
-            'x-api-key': API_KEY,
-            'Content-Type': 'application/json'
+            'x-api-key': API_KEY
         }
 
-        response = requests.post(API_URL, headers=headers, json=request_body)
+        response = requests.get(API_URL, headers=headers)
 
         # Raise exception for HTTP errors
         response.raise_for_status()
