@@ -1,23 +1,28 @@
 openapi: 3.0.4
 info:
   title: Planet Positions
-  description: Planet Positions is a simple tool for getting the position of planets in the solar system. It returns the position of planets in the solar system.
+  description: >-
+    Planet Positions is a simple tool for getting the position of planets in the
+    solar system. It returns the position of planets in the solar system.
   termsOfService: https://apiverve.com/terms/
   contact:
     name: APIVerve Support
     email: hello@apiverve.com
     url: https://apiverve.com/contact
-  version: 1.0.9
+  version: 1.0.0
 externalDocs:
   description: Learn more about APIVerve
   url: https://docs.apiverve.com?utm_source=openapi
 servers:
-- url: https://api.apiverve.com/
+  - url: https://api.apiverve.com/
 paths:
   /v1/planetpositions:
     post:
       summary: Get Planet Position Data
-      description: Planet Positions is a simple tool for getting the position of planets in the solar system. It returns the position of planets in the solar system.
+      description: >-
+        Planet Positions is a simple tool for getting the position of planets in
+        the solar system. It returns the position of planets in the solar
+        system.
       operationId: planetpositions
       parameters: []
       responses:
@@ -35,15 +40,15 @@ paths:
                     type: string
                     description: error
                   data:
-                    type: string
+                    type: object
                     description: data
               example:
                 status: ok
-                error: 
+                error: null
                 data:
                   planet: Moon
                   isBelowHorizon: false
-                  date: 2025-04-15T10:37:00.0000000Z
+                  date: '2025-04-15T10:37:00Z'
                   observer:
                     latitude: 37.7749
                     longitude: -122.4194
@@ -68,15 +73,15 @@ paths:
                     minutes: 49
                     seconds: 31
                   vectors:
-                    x: -0.00164529477799039
-                    y: -0.00184633247714346
-                    z: -0.00105904072361114
+                    x: -0.0016452947779903913
+                    'y': -0.0018463324771434563
+                    z: -0.0010590407236111441
         '401':
           description: Your request was not authorized, or your API Key was invalid
         '404':
           description: Requested resource was not found
         '500':
-          description: A server error has occured, try again later
+          description: A server error has occurred, try again later
       requestBody:
         required: true
         content:
@@ -85,37 +90,26 @@ paths:
               type: object
               properties:
                 date:
-                  type: date
-                  description: The date and time to get planetary position data for (YYYY-MM-DD HH:MM:SS)
-                  example: 2025-04-15 10:37:00
+                  type: string
+                  description: >-
+                    The date and time to get planetary position data for
+                    (YYYY-MM-DD HH:MM:SS)
                 lat:
                   type: number
-                  description: The latitude of the observer to get planetary position data for
-                  example: 37.7749
+                  description: The latitude of the observer
                 lon:
                   type: number
-                  description: The longitude of the observer to get planetary position data for
-                  example: -122.4194
+                  description: The longitude of the observer
                 alt:
                   type: number
-                  description: The altitude of the observer to get planetary position data for (in meters)
-                  example: 52
+                  description: The altitude of the observer in meters
                 planet:
                   type: string
-                  description: The planet to get planetary position data for (e.g. sun, moon, mercury, venus, mars, jupiter, saturn, uranus, neptune, pluto)
-                  example: Moon
+                  description: The planet to get position data for
               required:
-              - date
-              - lat
-              - lon
-              - alt
-              - planet
-              example:
-                planet: Moon
-                date: 2025-04-15 10:37:00
-                lat: 37.7749
-                lon: -122.4194
-                alt: 52
+                - lat
+                - lon
+                - planet
 components:
   securitySchemes:
     api_key:
@@ -123,4 +117,10 @@ components:
       name: x-api-key
       in: header
 security:
-- api_key: []
+  - api_key: []
+sampleRequest:
+  planet: Moon
+  date: '2025-04-15 10:37:00'
+  lat: 37.7749
+  lon: -122.4194
+  alt: 52
