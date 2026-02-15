@@ -12,35 +12,30 @@ namespace APIVerve.API.PlanetPositions
     {
         /// <summary>
         /// The date and time to get planetary position data for (YYYY-MM-DD HH:MM:SS)
-        /// Example: 2023-10-14 21:00:00
         /// </summary>
         [JsonProperty("date")]
         public string Date { get; set; }
 
         /// <summary>
-        /// The latitude of the observer to get planetary position data for
-        /// Example: 37.7749
+        /// The latitude of the observer
         /// </summary>
         [JsonProperty("lat")]
         public string Lat { get; set; }
 
         /// <summary>
-        /// The longitude of the observer to get planetary position data for
-        /// Example: -122.4194
+        /// The longitude of the observer
         /// </summary>
         [JsonProperty("lon")]
         public string Lon { get; set; }
 
         /// <summary>
-        /// The altitude of the observer to get planetary position data for (in meters)
-        /// Example: 0
+        /// The altitude of the observer in meters
         /// </summary>
         [JsonProperty("alt")]
         public string Alt { get; set; }
 
         /// <summary>
-        /// The planet to get planetary position data for (e.g. sun, moon, mercury, venus, mars, jupiter, saturn, uranus, neptune, pluto)
-        /// Example: sun, moon, mercury, venus, mars, jupiter, saturn, uranus, neptune, pluto
+        /// The planet to get position data for
         /// </summary>
         [JsonProperty("planet")]
         public string Planet { get; set; }
