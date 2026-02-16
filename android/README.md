@@ -26,7 +26,7 @@ Add the dependency:
 
 ```gradle
 dependencies {
-    implementation 'com.github.apiverve:planetpositions-api:1.1.13'
+    implementation 'com.github.apiverve:planetpositions-api:1.1.14'
 }
 ```
 
@@ -47,11 +47,11 @@ PlanetPositionsAPIClient client = new PlanetPositionsAPIClient("YOUR_API_KEY");
 try {
     // Prepare request parameters
     Map<String, Object> parameters = new HashMap<>();
-    parameters.put("date", "2023-10-14 21:00:00");
+    parameters.put("date", "2025-04-15 10:37:00");
     parameters.put("lat", 37.7749);
     parameters.put("lon", -122.4194);
-    parameters.put("alt", 0);
-    parameters.put("planet", "mars");
+    parameters.put("alt", 52);
+    parameters.put("planet", "Moon");
 
     // Execute the request
     APIResponse response = client.execute(parameters);
