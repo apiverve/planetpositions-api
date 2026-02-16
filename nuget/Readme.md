@@ -61,11 +61,11 @@ class Program
         var apiClient = new PlanetPositionsAPIClient("[YOUR_API_KEY]");
 
         var queryOptions = new QueryOptions {
-  planet = "Moon",
-  date = "2025-04-15 10:37:00",
-  lat = 37.7749,
-  lon = -122.4194,
-  alt = 52
+    planet = "Moon",
+    date = "2025-04-15 10:37:00",
+    lat = 37.7749,
+    lon = -122.4194,
+    alt = 52
 };
 
         // Make the API call
@@ -129,11 +129,11 @@ public class Example
         var apiClient = new PlanetPositionsAPIClient("[YOUR_API_KEY]");
 
         var queryOptions = new QueryOptions {
-  planet = "Moon",
-  date = "2025-04-15 10:37:00",
-  lat = 37.7749,
-  lon = -122.4194,
-  alt = 52
+    planet = "Moon",
+    date = "2025-04-15 10:37:00",
+    lat = 37.7749,
+    lon = -122.4194,
+    alt = 52
 };
 
         var response = await apiClient.ExecuteAsync(queryOptions);
@@ -165,11 +165,11 @@ public class Example
         var apiClient = new PlanetPositionsAPIClient("[YOUR_API_KEY]");
 
         var queryOptions = new QueryOptions {
-  planet = "Moon",
-  date = "2025-04-15 10:37:00",
-  lat = 37.7749,
-  lon = -122.4194,
-  alt = 52
+    planet = "Moon",
+    date = "2025-04-15 10:37:00",
+    lat = 37.7749,
+    lon = -122.4194,
+    alt = 52
 };
 
         var response = apiClient.Execute(queryOptions);
@@ -206,11 +206,11 @@ public class Example
         var apiClient = new PlanetPositionsAPIClient("[YOUR_API_KEY]");
 
         var queryOptions = new QueryOptions {
-  planet = "Moon",
-  date = "2025-04-15 10:37:00",
-  lat = 37.7749,
-  lon = -122.4194,
-  alt = 52
+    planet = "Moon",
+    date = "2025-04-15 10:37:00",
+    lat = 37.7749,
+    lon = -122.4194,
+    alt = 52
 };
 
         try
@@ -266,11 +266,11 @@ public class Example
         apiClient.SetRetryDelay(2000);     // Wait 2 seconds between retries
 
         var queryOptions = new QueryOptions {
-  planet = "Moon",
-  date = "2025-04-15 10:37:00",
-  lat = 37.7749,
-  lon = -122.4194,
-  alt = 52
+    planet = "Moon",
+    date = "2025-04-15 10:37:00",
+    lat = 37.7749,
+    lon = -122.4194,
+    alt = 52
 };
 
         try
@@ -311,11 +311,11 @@ apiClient.AddCustomHeader("X-Custom-Header", "custom-value");
 apiClient.AddCustomHeader("X-Request-ID", Guid.NewGuid().ToString());
 
 var queryOptions = new QueryOptions {
-  planet = "Moon",
-  date = "2025-04-15 10:37:00",
-  lat = 37.7749,
-  lon = -122.4194,
-  alt = 52
+    planet = "Moon",
+    date = "2025-04-15 10:37:00",
+    lat = 37.7749,
+    lon = -122.4194,
+    alt = 52
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -341,11 +341,11 @@ apiClient.SetLogger(message =>
 });
 
 var queryOptions = new QueryOptions {
-  planet = "Moon",
-  date = "2025-04-15 10:37:00",
-  lat = 37.7749,
-  lon = -122.4194,
-  alt = 52
+    planet = "Moon",
+    date = "2025-04-15 10:37:00",
+    lat = 37.7749,
+    lon = -122.4194,
+    alt = 52
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -363,11 +363,11 @@ apiClient.SetMaxRetries(3);           // Retry up to 3 times (default: 0, max: 3
 apiClient.SetRetryDelay(1500);        // Wait 1.5 seconds between retries (default: 1000ms)
 
 var queryOptions = new QueryOptions {
-  planet = "Moon",
-  date = "2025-04-15 10:37:00",
-  lat = 37.7749,
-  lon = -122.4194,
-  alt = 52
+    planet = "Moon",
+    date = "2025-04-15 10:37:00",
+    lat = 37.7749,
+    lon = -122.4194,
+    alt = 52
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -378,15 +378,16 @@ var response = await apiClient.ExecuteAsync(queryOptions);
 The API client implements `IDisposable` for proper resource cleanup:
 
 ```csharp
+var queryOptions = new QueryOptions {
+    planet = "Moon",
+    date = "2025-04-15 10:37:00",
+    lat = 37.7749,
+    lon = -122.4194,
+    alt = 52
+};
+
 using (var apiClient = new PlanetPositionsAPIClient("[YOUR_API_KEY]"))
 {
-    var queryOptions = new QueryOptions {
-  planet = "Moon",
-  date = "2025-04-15 10:37:00",
-  lat = 37.7749,
-  lon = -122.4194,
-  alt = 52
-};
     var response = await apiClient.ExecuteAsync(queryOptions);
     Console.WriteLine(Newtonsoft.Json.JsonConvert.SerializeObject(response, Newtonsoft.Json.Formatting.Indented));
 }
