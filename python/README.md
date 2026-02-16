@@ -44,7 +44,13 @@ from apiverve_planetpositions.apiClient import PlanetpositionsAPIClient
 # Initialize the client with your APIVerve API key
 api = PlanetpositionsAPIClient("[YOUR_API_KEY]")
 
-query = { "planet": "Moon", "date": "2025-04-15 10:37:00", "lat": 37.7749, "lon": -122.4194, "alt": 52 }
+query = {
+    "planet": "Moon",
+    "date": "2025-04-15 10:37:00",
+    "lat": 37.7749,
+    "lon": -122.4194,
+    "alt": 52
+}
 
 try:
     # Make the API call
@@ -82,7 +88,13 @@ Using the API client, you can perform requests to the API.
 ###### Define Query
 
 ```python
-query = { "planet": "Moon", "date": "2025-04-15 10:37:00", "lat": 37.7749, "lon": -122.4194, "alt": 52 }
+query = {
+    "planet": "Moon",
+    "date": "2025-04-15 10:37:00",
+    "lat": 37.7749,
+    "lon": -122.4194,
+    "alt": 52
+}
 ```
 
 ###### Simple Request
@@ -156,7 +168,13 @@ from apiverve_planetpositions.apiClient import PlanetpositionsAPIClient, Planetp
 
 api = PlanetpositionsAPIClient("[YOUR_API_KEY]")
 
-query = { "planet": "Moon", "date": "2025-04-15 10:37:00", "lat": 37.7749, "lon": -122.4194, "alt": 52 }
+query = {
+    "planet": "Moon",
+    "date": "2025-04-15 10:37:00",
+    "lat": 37.7749,
+    "lon": -122.4194,
+    "alt": 52
+}
 
 try:
     result = api.execute(query)
@@ -177,7 +195,13 @@ from apiverve_planetpositions.apiClient import PlanetpositionsAPIClient, Planetp
 
 api = PlanetpositionsAPIClient("[YOUR_API_KEY]")
 
-query = { "planet": "Moon", "date": "2025-04-15 10:37:00", "lat": 37.7749, "lon": -122.4194, "alt": 52 }
+query = {
+    "planet": "Moon",
+    "date": "2025-04-15 10:37:00",
+    "lat": 37.7749,
+    "lon": -122.4194,
+    "alt": 52
+}
 
 try:
     result = api.execute(query)
@@ -211,7 +235,13 @@ The client supports the context manager protocol for automatic resource cleanup:
 ```python
 from apiverve_planetpositions.apiClient import PlanetpositionsAPIClient, PlanetpositionsAPIClientError
 
-query = { "planet": "Moon", "date": "2025-04-15 10:37:00", "lat": 37.7749, "lon": -122.4194, "alt": 52 }
+query = {
+    "planet": "Moon",
+    "date": "2025-04-15 10:37:00",
+    "lat": 37.7749,
+    "lon": -122.4194,
+    "alt": 52
+}
 
 # Using context manager ensures proper cleanup
 with PlanetpositionsAPIClient("[YOUR_API_KEY]") as api:
@@ -237,7 +267,13 @@ from apiverve_planetpositions.apiClient import PlanetpositionsAPIClient
 # Enable debug mode
 api = PlanetpositionsAPIClient("[YOUR_API_KEY]", debug=True)
 
-query = { "planet": "Moon", "date": "2025-04-15 10:37:00", "lat": 37.7749, "lon": -122.4194, "alt": 52 }
+query = {
+    "planet": "Moon",
+    "date": "2025-04-15 10:37:00",
+    "lat": 37.7749,
+    "lon": -122.4194,
+    "alt": 52
+}
 
 # Debug information will be printed to console
 result = api.execute(query)
@@ -252,8 +288,15 @@ from apiverve_planetpositions.apiClient import PlanetpositionsAPIClient
 
 api = PlanetpositionsAPIClient("[YOUR_API_KEY]")
 
+query = {
+    "planet": "Moon",
+    "date": "2025-04-15 10:37:00",
+    "lat": 37.7749,
+    "lon": -122.4194,
+    "alt": 52
+}
+
 try:
-    query = { "planet": "Moon", "date": "2025-04-15 10:37:00", "lat": 37.7749, "lon": -122.4194, "alt": 52 }
     result = api.execute(query)
     print(result)
 finally:
