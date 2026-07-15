@@ -9,15 +9,26 @@ const API_KEY = process.env.APIVERVE_API_KEY || 'YOUR_API_KEY_HERE';
 const API_URL = 'https://api.apiverve.com/v1/planetpositions';
 
 /**
- * Make a GET request to the Planet Positions API
+ * Make a POST request to the Planet Positions API
  */
 async function callPlanetPositionsAPI() {
   try {
+    // Request body
+    const requestBody &#x3D; {
+    &quot;planet&quot;: &quot;Moon&quot;,
+    &quot;date&quot;: &quot;2025-04-15 10:37:00&quot;,
+    &quot;lat&quot;: 37.7749,
+    &quot;lon&quot;: -122.4194,
+    &quot;alt&quot;: 52
+};
+
     const response = await fetch(API_URL, {
-      method: 'GET',
+      method: 'POST',
       headers: {
-        'x-api-key': API_KEY
-      }
+        'x-api-key': API_KEY,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(requestBody)
     });
 
     // Check if response is successful
