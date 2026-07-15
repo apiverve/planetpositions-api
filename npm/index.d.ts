@@ -4,18 +4,30 @@ declare module '@apiverve/planetpositions' {
     secure?: boolean;
   }
 
+  /**
+   * Describes fields the current plan does not unlock. Locked fields arrive as null
+   * in `data`; `locked_fields` names them, using dot paths for nested fields.
+   * Absent when the plan unlocks everything.
+   */
+  export interface PremiumInfo {
+    message: string;
+    upgrade_url: string;
+    locked_fields: string[];
+  }
+
   export interface planetpositionsResponse {
     status: string;
     error: string | null;
     data: PlanetPositionsData;
     code?: number;
+    premium?: PremiumInfo;
   }
 
 
   interface PlanetPositionsData {
-      planet:         string;
-      isBelowHorizon: boolean;
-      date:           Date;
+      planet:         null | string;
+      isBelowHorizon: boolean | null;
+      date:           Date | null;
       observer:       Observer;
       rightAscension: HourAngle;
       declination:    Declination;
@@ -26,32 +38,32 @@ declare module '@apiverve/planetpositions' {
   }
   
   interface Declination {
-      degrees: number;
-      minutes: number;
-      seconds: number;
+      degrees: number | null;
+      minutes: number | null;
+      seconds: number | null;
   }
   
   interface Distance {
-      km:                 number;
-      lightTravelSeconds: number;
-      astronomicalUnits:  number;
+      km:                 number | null;
+      lightTravelSeconds: number | null;
+      astronomicalUnits:  number | null;
   }
   
   interface HourAngle {
-      hours:   number;
-      minutes: number;
-      seconds: number;
+      hours:   number | null;
+      minutes: number | null;
+      seconds: number | null;
   }
   
   interface Observer {
-      latitude:  number;
-      longitude: number;
+      latitude:  number | null;
+      longitude: number | null;
   }
   
   interface Vectors {
-      x: number;
-      y: number;
-      z: number;
+      x: number | null;
+      y: number | null;
+      z: number | null;
   }
 
   export default class planetpositionsWrapper {
