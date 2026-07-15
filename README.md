@@ -8,7 +8,7 @@ The Planet Positions API provides a simple, reliable way to integrate planet pos
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![API Status](https://img.shields.io/badge/Status-Active-green.svg)](https://apiverve.com/marketplace/planetpositions?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
-[![Method](https://img.shields.io/badge/Method-GET-blue.svg)](#)
+[![Method](https://img.shields.io/badge/Method-POST-blue.svg)](#)
 [![Platform](https://img.shields.io/badge/Platform-Multi--Platform-orange.svg)](#installation)
 
 **Available on:**
@@ -30,11 +30,21 @@ The Planet Positions API provides a simple, reliable way to integrate planet pos
 ```javascript
 async function callPlanetPositionsAPI() {
     try {
+        const requestBody = {
+    "planet": "Moon",
+    "date": "2025-04-15 10:37:00",
+    "lat": 37.7749,
+    "lon": -122.4194,
+    "alt": 52
+};
+
         const response = await fetch('https://api.apiverve.com/v1/planetpositions', {
-            method: 'GET',
+            method: 'POST',
             headers: {
-                'x-api-key': 'YOUR_API_KEY_HERE'
-            }
+                'x-api-key': 'YOUR_API_KEY_HERE',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(requestBody)
         });
 
         const data = await response.json();
@@ -50,8 +60,16 @@ callPlanetPositionsAPI();
 ### Using cURL
 
 ```bash
-curl -X GET "https://api.apiverve.com/v1/planetpositions?param=value" \
-  -H "x-api-key: YOUR_API_KEY_HERE"
+curl -X POST "https://api.apiverve.com/v1/planetpositions" \
+  -H "x-api-key: YOUR_API_KEY_HERE" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "planet": "Moon",
+    "date": "2025-04-15 10:37:00",
+    "lat": 37.7749,
+    "lon": -122.4194,
+    "alt": 52
+}'
 ```
 
 **Get your API key:** [https://apiverve.com](https://apiverve.com)
@@ -150,7 +168,7 @@ go get github.com/apiverve/planetpositions-api/go
 |---------|---------|
 | **Multi-language SDKs** | Native packages for JavaScript, Python, C#, Go, and Android |
 | **Simple Integration** | Single API key authentication, consistent response format |
-| **Production Ready** | 99.9% uptime, fast response times, used by thousands of developers |
+| **Production Ready** | 99.9% uptime SLA, served from 24 global regions |
 | **Comprehensive Docs** | Full examples, OpenAPI spec, and dedicated support |
 
 ---
@@ -169,7 +187,7 @@ go get github.com/apiverve/planetpositions-api/go
 The Planet Positions API is commonly used for:
 
 - **Web Applications** - Add planet positions features to your frontend or backend
-- **Mobile Apps** - Native SDKs for iOS and Android development
+- **Mobile Apps** - Native SDKs for Android development
 - **Automation** - Integrate with n8n, Zapier, or custom workflows
 - **SaaS Products** - Enhance your product with planet positions capabilities
 - **Data Pipelines** - Process and analyze data at scale
