@@ -30,7 +30,7 @@ class planetpositionsWrapper {
         this.baseURL = 'https://api.apiverve.com/v1/planetpositions';
 
         // Validation rules for parameters (generated from schema)
-        this.validationRules = {"date":{"type":"string","required":false,"format":"date"},"lat":{"type":"number","required":true,"min":-90,"max":90},"lon":{"type":"number","required":true,"min":-180,"max":180},"alt":{"type":"number","required":false,"min":0,"default":0},"planet":{"type":"string","required":true}};
+        this.validationRules = {"date":{"type":"string","required":false,"format":"date"},"time":{"type":"string","required":false,"format":"time"},"lat":{"type":"number","required":true,"min":-90,"max":90},"lon":{"type":"number","required":true,"min":-180,"max":180},"alt":{"type":"number","required":false,"min":0,"default":0},"planet":{"type":"string","required":true}};
     }
 
     /**
