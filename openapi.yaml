@@ -91,9 +91,12 @@ paths:
               properties:
                 date:
                   type: string
+                  description: The date to get planetary position data for (MM-DD-YYYY)
+                time:
+                  type: string
                   description: >-
-                    The date and time to get planetary position data for
-                    (YYYY-MM-DD HH:MM:SS)
+                    The time of day for the calculation (HH:mm format, 24-hour).
+                    Defaults to 00:00 if not provided
                 lat:
                   type: number
                   description: The latitude of the observer
