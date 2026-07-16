@@ -11,28 +11,34 @@ namespace APIVerve.API.PlanetPositions
     public class PlanetPositionsQueryOptions
     {
         /// <summary>
-        /// The date and time to get planetary position data for (YYYY-MM-DD HH:MM:SS)
+        /// The date to get planetary position data for (MM-DD-YYYY)
         /// </summary>
         [JsonProperty("date")]
         public string Date { get; set; }
 
         /// <summary>
+        /// The time of day for the calculation (HH:mm format, 24-hour). Defaults to 00:00 if not provided
+        /// </summary>
+        [JsonProperty("time")]
+        public string Time { get; set; }
+
+        /// <summary>
         /// The latitude of the observer
         /// </summary>
         [JsonProperty("lat")]
-        public string Lat { get; set; }
+        public double Lat { get; set; }
 
         /// <summary>
         /// The longitude of the observer
         /// </summary>
         [JsonProperty("lon")]
-        public string Lon { get; set; }
+        public double Lon { get; set; }
 
         /// <summary>
         /// The altitude of the observer in meters
         /// </summary>
         [JsonProperty("alt")]
-        public string Alt { get; set; }
+        public double? Alt { get; set; }
 
         /// <summary>
         /// The planet to get position data for
