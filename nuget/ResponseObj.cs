@@ -25,6 +25,9 @@ namespace APIVerve.API.PlanetPositions
 
         [JsonProperty("data")]
         public Data Data { get; set; }
+
+        [JsonProperty("premium")]
+        public Premium Premium { get; set; }
     }
 
     public partial class Data
@@ -33,10 +36,10 @@ namespace APIVerve.API.PlanetPositions
         public string Planet { get; set; }
 
         [JsonProperty("isBelowHorizon")]
-        public bool IsBelowHorizon { get; set; }
+        public bool? IsBelowHorizon { get; set; }
 
         [JsonProperty("date")]
-        public DateTimeOffset Date { get; set; }
+        public DateTimeOffset? Date { get; set; }
 
         [JsonProperty("observer")]
         public Observer Observer { get; set; }
@@ -63,57 +66,69 @@ namespace APIVerve.API.PlanetPositions
     public partial class Declination
     {
         [JsonProperty("degrees")]
-        public long Degrees { get; set; }
+        public long? Degrees { get; set; }
 
         [JsonProperty("minutes")]
-        public long Minutes { get; set; }
+        public long? Minutes { get; set; }
 
         [JsonProperty("seconds")]
-        public long Seconds { get; set; }
+        public long? Seconds { get; set; }
     }
 
     public partial class Distance
     {
         [JsonProperty("km")]
-        public double Km { get; set; }
+        public double? Km { get; set; }
 
         [JsonProperty("lightTravelSeconds")]
-        public double LightTravelSeconds { get; set; }
+        public double? LightTravelSeconds { get; set; }
 
         [JsonProperty("astronomicalUnits")]
-        public double AstronomicalUnits { get; set; }
+        public double? AstronomicalUnits { get; set; }
     }
 
     public partial class HourAngle
     {
         [JsonProperty("hours")]
-        public long Hours { get; set; }
+        public long? Hours { get; set; }
 
         [JsonProperty("minutes")]
-        public long Minutes { get; set; }
+        public long? Minutes { get; set; }
 
         [JsonProperty("seconds")]
-        public long Seconds { get; set; }
+        public long? Seconds { get; set; }
     }
 
     public partial class Observer
     {
         [JsonProperty("latitude")]
-        public double Latitude { get; set; }
+        public double? Latitude { get; set; }
 
         [JsonProperty("longitude")]
-        public double Longitude { get; set; }
+        public double? Longitude { get; set; }
     }
 
     public partial class Vectors
     {
         [JsonProperty("x")]
-        public double X { get; set; }
+        public double? X { get; set; }
 
         [JsonProperty("y")]
-        public double Y { get; set; }
+        public double? Y { get; set; }
 
         [JsonProperty("z")]
-        public double Z { get; set; }
+        public double? Z { get; set; }
+    }
+
+    public partial class Premium
+    {
+        [JsonProperty("message")]
+        public string Message { get; set; }
+
+        [JsonProperty("upgrade_url")]
+        public Uri UpgradeUrl { get; set; }
+
+        [JsonProperty("locked_fields")]
+        public string[] LockedFields { get; set; }
     }
 }
