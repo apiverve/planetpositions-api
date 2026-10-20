@@ -2,8 +2,9 @@ openapi: 3.0.4
 info:
   title: Planet Positions
   description: >-
-    Planet Positions is a simple tool for getting the position of planets in the
-    solar system. It returns the position of planets in the solar system.
+    Planet Positions locates solar system bodies for any observer coordinates on
+    Earth. It checks if the sun, moon, or planets sit below the horizon, while
+    paid plans add celestial coordinates and distance.
   termsOfService: https://apiverve.com/terms/
   contact:
     name: APIVerve Support
@@ -18,7 +19,7 @@ servers:
 paths:
   /v1/planetpositions:
     post:
-      summary: Get Planet Position Data
+      summary: Planet Positions
       description: >-
         Planet Positions is a simple tool for getting the position of planets in
         the solar system. It returns the position of planets in the solar

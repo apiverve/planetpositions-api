@@ -1,13 +1,13 @@
-# [Planet Positions API](https://apiverve.com/marketplace/planetpositions?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+# [Planet Positions API](https://apiverve.com/marketplace/planetpositions?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 
-Planet Positions is a simple tool for getting the position of planets in the solar system. It returns the position of planets in the solar system.
+Planet Positions locates solar system bodies for any observer coordinates on Earth. It checks if the sun, moon, or planets sit below the horizon, while paid plans add celestial coordinates and distance.
 
 The Planet Positions API provides a simple, reliable way to integrate planet positions functionality into your applications. Built for developers who need production-ready planet positions capabilities without the complexity of building from scratch.
 
-**[View API Details →](https://apiverve.com/marketplace/planetpositions?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)**
+**[View API Details →](https://apiverve.com/marketplace/planetpositions?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![API Status](https://img.shields.io/badge/Status-Active-green.svg)](https://apiverve.com/marketplace/planetpositions?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+[![API Status](https://img.shields.io/badge/Status-Active-green.svg)](https://apiverve.com/marketplace/planetpositions?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 [![Method](https://img.shields.io/badge/Method-POST-blue.svg)](#)
 [![Platform](https://img.shields.io/badge/Platform-Multi--Platform-orange.svg)](#installation)
 
@@ -175,7 +175,7 @@ go get github.com/apiverve/planetpositions-api/go
 
 ## Documentation
 
-- 🏠 **API Home:** [Planet Positions API](https://apiverve.com/marketplace/planetpositions?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+- 🏠 **API Home:** [Planet Positions API](https://apiverve.com/marketplace/planetpositions?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 - 📚 **API Reference:** [docs.apiverve.com/ref/planetpositions](https://docs.apiverve.com/ref/planetpositions)
 - 📖 **OpenAPI Spec:** [openapi.yaml](./openapi.yaml)
 - 💡 **Examples:** [examples/](./examples/)
@@ -205,11 +205,64 @@ x-api-key: YOUR_API_KEY_HERE
 Get your API key: [https://apiverve.com](https://apiverve.com)
 
 ### Response Format
-All responses are JSON with this structure:
+
+Every APIVerve endpoint returns the same envelope — check `status`, then read `data`:
+
 ```json
 {
   "status": "ok",
+  "error": null,
   "data": { ... }
+}
+```
+
+### Example Response
+
+A real response from the Planet Positions API:
+
+```json
+{
+  "status": "ok",
+  "error": null,
+  "data": {
+    "planet": "Moon",
+    "isBelowHorizon": false,
+    "date": "2025-04-15T10:37:00Z",
+    "observer": {
+      "latitude": 37.7749,
+      "longitude": -122.4194
+    },
+    "rightAscension": {
+      "hours": 15,
+      "minutes": 13,
+      "seconds": 11
+    },
+    "declination": {
+      "degrees": -23,
+      "minutes": 10,
+      "seconds": 56
+    },
+    "distance": {
+      "km": 402457.36,
+      "lightTravelSeconds": 1.342,
+      "astronomicalUnits": 0.003
+    },
+    "siderealTime": {
+      "hours": 16,
+      "minutes": 2,
+      "seconds": 42
+    },
+    "hourAngle": {
+      "hours": 0,
+      "minutes": 49,
+      "seconds": 31
+    },
+    "vectors": {
+      "x": -0.0016452947779903913,
+      "y": -0.0018463324771434563,
+      "z": -0.0010590407236111441
+    }
+  }
 }
 ```
 
@@ -217,7 +270,7 @@ All responses are JSON with this structure:
 
 ## Support & Community
 
-- 🏠 **API Home**: [Planet Positions API](https://apiverve.com/marketplace/planetpositions?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+- 🏠 **API Home**: [Planet Positions API](https://apiverve.com/marketplace/planetpositions?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 - 💬 **Support**: [https://apiverve.com/contact](https://apiverve.com/contact)
 - 🐛 **Issues**: [GitHub Issues](../../issues)
 - 📖 **Documentation**: [https://docs.apiverve.com](https://docs.apiverve.com)
