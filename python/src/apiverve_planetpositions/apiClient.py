@@ -1,6 +1,6 @@
 import re
-from typing import Dict, Optional, Any
-from dataclasses import dataclass, List
+from typing import Dict, Optional, Any, List
+from dataclasses import dataclass
 import requests
 
 
@@ -25,6 +25,7 @@ class PlanetpositionsAPIClient:
     # Validation rules for parameters (generated from schema)
     VALIDATION_RULES = {
         "date": {"type": "string", "required": False, "format": "date"},
+        "time": {"type": "string", "required": False, "format": "time"},
         "lat": {"type": "number", "required": True, "min": -90, "max": 90},
         "lon": {"type": "number", "required": True, "min": -180, "max": 180},
         "alt": {"type": "number", "required": False, "min": 0, "default": 0},
