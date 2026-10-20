@@ -1,7 +1,7 @@
 {
   "name": "@apiverve/planetpositions",
-  "version": "1.2.0",
-  "description": "Planet Positions is a simple tool for getting the position of planets in the solar system. It returns the position of planets in the solar system.",
+  "version": "1.2.2",
+  "description": "Planet Positions locates solar system bodies for any observer coordinates on Earth. It checks if the sun, moon, or planets sit below the horizon, while paid plans add celestial coordinates and distance.",
   "main": "index.js",
   "types": "index.d.ts",
   "sideEffects": false,
@@ -23,7 +23,7 @@
     "directory": "npm"
   },
   "keywords": [
-    "planet positions", "planet positions api", "planet positions tool", "planet positions software", "planet positions service"
+    "planet positions api", "planetary positions", "celestial coordinates lookup", "calculate planet position", "planet right ascension declination"
   ],
   "author": {
     "name": "APIVerve",
@@ -34,7 +34,7 @@
   "bugs": {
     "url": "https://github.com/apiverve/planetpositions-api/issues"
   },
-  "homepage": "https://apiverve.com/marketplace/planetpositions?utm_source=npm&utm_medium=homepage",
+  "homepage": "https://apiverve.com/marketplace/planetpositions?utm_source=npm&utm_medium=referral&utm_content=homepage",
   "devDependencies": {
     "mocha": "^11.0.1",
     "chai": "^5.1.2",
