@@ -19,7 +19,7 @@ module APIVerve
       DEFAULT_TIMEOUT = 30
 
       # Validation rules for parameters
-      VALIDATION_RULES = { 'date' => { type: 'string', required: false, format: 'date' }, 'time' => { type: 'string', required: false, format: 'time' }, 'lat' => { type: 'number', required: true, min: -90, max: 90 }, 'lon' => { type: 'number', required: true, min: -180, max: 180 }, 'alt' => { type: 'number', required: false, min: 0 }, 'planet' => { type: 'string', required: true } }
+      VALIDATION_RULES = { 'date' => { type: 'string', required: false, format: 'date' }, 'time' => { type: 'string', required: false, format: 'time' }, 'timezone' => { type: 'string', required: false, format: 'timezone' }, 'lat' => { type: 'number', required: true, min: -90, max: 90 }, 'lon' => { type: 'number', required: true, min: -180, max: 180 }, 'alt' => { type: 'number', required: false, min: 0 }, 'planet' => { type: 'string', required: true } }
 
       # Format validation patterns
       FORMAT_PATTERNS = {
