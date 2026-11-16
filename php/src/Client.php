@@ -36,6 +36,7 @@ class Client
     private const VALIDATION_RULES = [
         'date' => ['type' => 'string', 'required' => false, 'format' => 'date'],
         'time' => ['type' => 'string', 'required' => false, 'format' => 'time'],
+        'timezone' => ['type' => 'string', 'required' => false, 'format' => 'timezone'],
         'lat' => ['type' => 'number', 'required' => true, 'min' => -90, 'max' => 90],
         'lon' => ['type' => 'number', 'required' => true, 'min' => -180, 'max' => 180],
         'alt' => ['type' => 'number', 'required' => false, 'min' => 0],
